@@ -1,0 +1,14 @@
+
+<button type="button" class="btn btn-primary" (click)="insertDataInSelectedTables()">Create Selected Tables</button>
+<angular2-multiselect [data]="tableNameList" 
+                      [(ngModel)]="selectedTableNameList" 
+                      [settings]="settings" 
+                      (onSelect)="onItemSelect($event)"
+                      (onDeSelect)="OnItemDeSelect($event)" 
+                      (onSelectAll)="onSelectAll($event)" 
+                      (onDeSelectAll)="onDeSelectAll($event)">
+</angular2-multiselect>
+
+
+
+

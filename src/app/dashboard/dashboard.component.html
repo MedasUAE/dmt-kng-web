@@ -1,0 +1,70 @@
+<p>
+  {{title}}
+</p>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">Execution Order</th>
+      <th scope="col">Task Name</th>
+      <th scope="col"> Task Completed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>
+        <a [routerLink]="['/mysqlConnection']" class="list-group-item list-group-item-action">Create Mysql Connection </a>
+      </td>
+
+      <td>
+        <div *ngIf="task1;else other_content">
+          Yes
+        </div>
+
+        <ng-template #other_content>No</ng-template>
+
+      </td>
+
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>
+        <a [routerLink]="['/hanaConnection']" class="list-group-item list-group-item-action">Create SapHana Connection</a>
+      </td>
+      <td>
+        <div *ngIf="task2;else other_content">
+          Yes
+        </div>
+
+        <ng-template #other_content>No</ng-template>
+      </td>
+
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>
+        <a [routerLink]="['/createtables']" class="list-group-item list-group-item-action">Create Tables</a>
+      </td>
+      <td>
+        <div *ngIf="task3;else other_content">
+          Yes
+        </div>
+
+        <ng-template #other_content>No</ng-template>
+      </td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>
+        <a [routerLink]="['/insertdata']" class="list-group-item list-group-item-action">Insert Data in Tables</a>
+      </td>
+      <td>
+        <div *ngIf="task4;else other_content">
+          Yes
+        </div>
+
+        <ng-template #other_content>No</ng-template>
+      </td>
+    </tr>
+  </tbody>
+</table>
