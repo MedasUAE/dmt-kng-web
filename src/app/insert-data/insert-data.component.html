@@ -1,14 +1,29 @@
-
-<button type="button" class="btn btn-primary" (click)="insertDataInSelectedTables()">Create Selected Tables</button>
-<angular2-multiselect [data]="tableNameList" 
-                      [(ngModel)]="selectedTableNameList" 
-                      [settings]="settings" 
-                      (onSelect)="onItemSelect($event)"
-                      (onDeSelect)="OnItemDeSelect($event)" 
-                      (onSelectAll)="onSelectAll($event)" 
-                      (onDeSelectAll)="onDeSelectAll($event)">
+<table>
+    <tr>
+        <td>
+            <div>
+                <button type="button" class="btn btn-primary" (click)="insertDataInSelectedTables()">Put data in selected tables</button>
+            </div>
+        </td>
+        <td>
+            <div>
+                <label class="btn-primary" ngbButtonLabel>
+                    <input type="checkbox" [(ngModel)]="isRemoveExistingRecords" (click)="removeExistingRecords(!isRemoveExistingRecords)">Want to remove existing records
+                </label>
+            </div>
+        </td>
+        <td>
+            <div>
+            <button type="button" class="btn btn-primary" (click)="moveToDashboard()">Move To Dashboard</button>
+         </div>
+        </td>
+       
+    </tr>
+</table>
+<angular2-multiselect [data]="tableNameList" [(ngModel)]="selectedTableNameList" [settings]="settings" (onSelect)="onItemSelect($event)"
+    (onDeSelect)="OnItemDeSelect($event)" (onSelectAll)="onSelectAll($event)" (onDeSelectAll)="onDeSelectAll($event)">
 </angular2-multiselect>
 
-
-
-
+ <ngx-spinner bdColor="rgba(51,51,51,0.8)" size="medium" color="#fff" type="ball-scale-multiple">
+    <p style="font-size: 20px; color: white">Inserting Data...</p>
+</ngx-spinner> 

@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule} from '@angular/router';
 import { AngularMultiSelectModule } from 'angular2-multiselect-dropdown/angular2-multiselect-dropdown';
+import { NgxSpinnerModule } from 'ngx-spinner';
  
 import { AppComponent } from './app.component';
 import { AppRoutingModule }  from './app-routing.module';
@@ -27,7 +28,7 @@ import { InsertDataComponent } from './insert-data/insert-data.component';
   ],
   imports: [
     BrowserModule,HttpModule,FormsModule,ReactiveFormsModule,
-    RouterModule,AppRoutingModule,AngularMultiSelectModule 
+    RouterModule,AppRoutingModule,AngularMultiSelectModule,NgxSpinnerModule 
   ],
   providers: [DataMigrationService],
   bootstrap: [AppComponent],

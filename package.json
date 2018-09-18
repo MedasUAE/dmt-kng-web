@@ -23,7 +23,9 @@
     "angular2-multiselect-dropdown": "^2.9.1",
     "core-js": "^2.5.4",
     "ng2-opd-popup": "^1.1.21",
-    "rxjs": "^6.0.0",
+    "ngx-progressbar": "^2.1.1",
+    "ngx-spinner": "^6.1.2",
+    "rxjs": "^6.3.2",
     "underscore": "^1.9.1",
     "zone.js": "~0.8.26"
   },

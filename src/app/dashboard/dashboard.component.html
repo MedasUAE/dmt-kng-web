@@ -1,9 +1,10 @@
-<p>
+
+<p class="bg-dark text-white text-center">
   {{title}}
 </p>
 <table class="table table-bordered">
   <thead>
-    <tr>
+    <tr class="table-primary">
       <th scope="col">Execution Order</th>
       <th scope="col">Task Name</th>
       <th scope="col"> Task Completed</th>
@@ -12,59 +13,36 @@
   <tbody>
     <tr>
       <td>1</td>
-      <td>
-        <a [routerLink]="['/mysqlConnection']" class="list-group-item list-group-item-action">Create Mysql Connection </a>
+      <td class="table-active">
+        <a [routerLink]="['/mysqlConnection']" class="list-group-item list-group-item-action ">Create Mysql Connection </a>
       </td>
-
-      <td>
-        <div *ngIf="task1;else other_content">
-          Yes
-        </div>
-
-        <ng-template #other_content>No</ng-template>
-
-      </td>
-
-    </tr>
+      <td *ngIf="task1"> <div class="table-success"> Yes </div></td>
+       <td *ngIf="!task1"> <div class="table-danger"> No  </div> </td>
+     </tr>
     <tr>
       <td>2</td>
       <td>
         <a [routerLink]="['/hanaConnection']" class="list-group-item list-group-item-action">Create SapHana Connection</a>
       </td>
-      <td>
-        <div *ngIf="task2;else other_content">
-          Yes
-        </div>
-
-        <ng-template #other_content>No</ng-template>
-      </td>
+      <td *ngIf="task2"> <div class="table-success"> Yes </div></td>
+      <td *ngIf="!task2"> <div class="table-danger"> No  </div> </td>
 
     </tr>
     <tr>
-      <td>3</td>
+      <td>3 </td>
       <td>
         <a [routerLink]="['/createtables']" class="list-group-item list-group-item-action">Create Tables</a>
       </td>
-      <td>
-        <div *ngIf="task3;else other_content">
-          Yes
-        </div>
-
-        <ng-template #other_content>No</ng-template>
-      </td>
+      <td *ngIf="task3"> <div class="table-success"> Yes </div></td>
+      <td *ngIf="!task3"> <div class="table-danger"> No  </div> </td>
     </tr>
     <tr>
       <td>4</td>
       <td>
         <a [routerLink]="['/insertdata']" class="list-group-item list-group-item-action">Insert Data in Tables</a>
       </td>
-      <td>
-        <div *ngIf="task4;else other_content">
-          Yes
-        </div>
-
-        <ng-template #other_content>No</ng-template>
-      </td>
+      <td *ngIf="task4"> <div class="table-success"> Yes </div></td>
+      <td *ngIf="!task4"> <div class="table-danger"> No  </div> </td>
     </tr>
   </tbody>
 </table>

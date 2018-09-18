@@ -55,11 +55,11 @@ export class DataMigrationService {
     return promise;
   }
 
-  createSelectedTables(selectedTableNameList) {
+  createSelectedTables(selectedTableNameListAndRemoveExistingFlag) {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     let promise = new Promise<boolean>((resolve, reject) => {
-      this.http.post(API_URL + '/createselectedtables', selectedTableNameList, options).toPromise()
+      this.http.post(API_URL + '/createselectedtables', selectedTableNameListAndRemoveExistingFlag, options).toPromise()
         .then(
           res => { // Success
             let body = res.json();
@@ -72,11 +72,11 @@ export class DataMigrationService {
     return promise;
   }
 
-  insertDataInSelectedTables(selectedTableNameList) {
+  insertDataInSelectedTables(dataList) {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     let promise = new Promise<boolean>((resolve, reject) => {
-      this.http.post(API_URL + '/insertdatainselectedtables', selectedTableNameList, options).toPromise()
+      this.http.post(API_URL + '/insertdatainselectedtables', dataList, options).toPromise()
         .then(
           res => { // Success
             let body = res.json();
